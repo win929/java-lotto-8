@@ -8,6 +8,7 @@ import lotto.domain.Lotto;
 public class LottoView {
     private static final String PURCHASE_AMOUNT_PROMPT = "구입금액을 입력해 주세요.";
     private static final String LOTTO_COUNT_MESSAGE = "%d개를 구매했습니다.";
+    private static final String WINNING_NUMBER_PROMPT = "당첨 번호를 입력해 주세요.";
 
     public String readInput() {
         return Console.readLine();
@@ -30,6 +31,11 @@ public class LottoView {
         for (Lotto lotto : lottos) {
             System.out.println(formatLottoNumbers(lotto.getNumbers()));
         }
+    }
+
+    public void printWinningNumberPrompt() {
+        System.out.println();
+        System.out.println(WINNING_NUMBER_PROMPT);
     }
 
     private String formatLottoNumbers(List<Integer> numbers) {

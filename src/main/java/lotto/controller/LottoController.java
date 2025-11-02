@@ -4,6 +4,7 @@ import java.util.List;
 import lotto.domain.Lotto;
 import lotto.domain.LottoMachine;
 import lotto.domain.PurchaseAmount;
+import lotto.util.InputParser;
 import lotto.view.LottoView;
 
 public class LottoController {
@@ -23,6 +24,8 @@ public class LottoController {
 
         List<Lotto> lottos = lottoMachine.issueLottos(lottoCount);
         lottoView.printLottos(lottos);
+
+        Lotto winningLotto = getWinningLotto();
     }
 
     private PurchaseAmount getPurchaseAmount() {
@@ -31,6 +34,20 @@ public class LottoController {
                 lottoView.printPurchaseAmountPrompt();
 
                 return new PurchaseAmount(lottoView.readInput());
+            } catch (IllegalArgumentException e) {
+                lottoView.printErrorMessage(e.getMessage());
+            }
+        }
+    }
+
+    private Lotto getWinningLotto() {
+        while (true) {
+            try {
+                lottoView.printWinningNumberPrompt();
+                String input = lottoView.readInput();
+                List<Integer> numbers = InputParser.parseWinningNumbers(input);
+
+                return new Lotto(numbers);
             } catch (IllegalArgumentException e) {
                 lottoView.printErrorMessage(e.getMessage());
             }

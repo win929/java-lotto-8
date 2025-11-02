@@ -43,7 +43,7 @@ public class PurchaseAmount {
     }
 
     private void isMultipleOfPrice(int amount) {
-        if (amount % 1000 != 0) {
+        if (amount % LOTTO_PRICE.getValue() != 0) {
             throw new IllegalArgumentException(AMOUNT_INVALID_UNIT.getMessage());
         }
     }

@@ -12,7 +12,10 @@ public enum ErrorMessage {
 
     LOTTO_INVALID_SIZE(String.format("로또 번호는 %d개여야 합니다.", LOTTO_SIZE.getValue())),
     LOTTO_DUPLICATE("로또 번호에 중복된 숫자가 있습니다."),
-    LOTTO_INVALID_RANGE(String.format("로또 번호는 %d부터 %d 사이의 숫자여야 합니다.", LOTTO_MIN_NUMBER.getValue(), LOTTO_MAX_NUMBER.getValue()));
+    LOTTO_INVALID_RANGE(String.format("로또 번호는 %d부터 %d 사이의 숫자여야 합니다.", LOTTO_MIN_NUMBER.getValue(), LOTTO_MAX_NUMBER.getValue())),
+
+    WINNING_NUMBER_INVALID_FORMAT("쉼표(,)를 기준으로 올바르게 입력해주세요. (예: 1,2,3,4,5,6)"),
+    WINNING_NUMBER_NOT_NUMERIC("당첨 번호는 숫자만 입력 가능합니다.");
 
     private static final String PREFIX = "[ERROR] ";
     private final String message;
