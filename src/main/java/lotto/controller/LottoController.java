@@ -4,6 +4,7 @@ import java.util.List;
 import lotto.domain.BonusNumber;
 import lotto.domain.Lotto;
 import lotto.domain.LottoMachine;
+import lotto.domain.LottoResult;
 import lotto.domain.PurchaseAmount;
 import lotto.util.InputParser;
 import lotto.view.LottoView;
@@ -28,6 +29,12 @@ public class LottoController {
 
         Lotto winningLotto = getWinningLotto();
         BonusNumber bonusNumber = getBonusNumber(winningLotto);
+
+        LottoResult lottoResult = new LottoResult(lottos, winningLotto, bonusNumber);
+        double profitRate = lottoResult.calculateProfitRate(purchaseAmount.getAmount());
+
+        lottoView.printStatistics(lottoResult);
+        lottoView.printProfitRate(profitRate);
     }
 
     private PurchaseAmount getPurchaseAmount() {
