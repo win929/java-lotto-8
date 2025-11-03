@@ -43,9 +43,9 @@
 - [x] 총 수익률을 요구사항의 출력 형식에 맞게 출력한다.
 
 ### 8. 단위 테스트 작성
-- [x] PurchaseAmountTest: 구입 금액 유효성(숫자, 1000원 단위, 0원 초과) 검증
-- [x] LottoTest: 로또 번호 유효성(6개, 중복, 1~45 범위) 및 일치 개수 계산 검증
-- [x] InputParserTest: 당첨 번호 파싱(쉼표, 공백, 비정상 입력) 검증
-- [x] BonusNumberTest: 보너스 번호 유효성(숫자, 1~45 범위, 당첨번호와 중복) 검증
-- [x] RankTest: 등수 계산(Rank.of) 로직 검증
-- [x] LottoResultTest: 당첨 통계 및 수익률 계산 로직 검증
+- [x] `PurchaseAmountTest`: 구입 금액 유효성(숫자, 1000원 단위, 0원 초과) 검증
+- [x] `LottoTest`: 로또 번호 유효성(6개, 중복, 1~45 범위) 및 일치 개수 계산 검증
+- [x] `InputParserTest`: 당첨 번호 파싱(쉼표, 공백, 비정상 입력) 검증
+- [x] `BonusNumberTest`: 보너스 번호 유효성(숫자, 1~45 범위, 당첨번호와 중복) 검증
+- [x] `RankTest`: 등수 계산(Rank.of) 로직 검증
+- [x] `LottoResultTest`: 당첨 통계 및 수익률 계산 로직 검증
